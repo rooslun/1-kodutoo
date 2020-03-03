@@ -1,0 +1,19 @@
+body{
+    margin:0px;
+}
+.in-container{
+    /*width: 50vw;*/
+    height: 50px;
+    background-color: blue;
+    border: 3px solid red;
+    /*margin-left:25vw;*/
+
+}
+
+#container{
+    background-color: black;
+    /*height:100vh;*/
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}

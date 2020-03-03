@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tund1</title>
+</head>
+<body>
+    <div id="demo">
+        Esimine text.
+    </div>
+    <button onclick="mingifunktsioon();">Muudan texti ära</button>
+    <script>
+        const number=1;
+        let number2=2;
+        console.log("Esimene väärtus: " + number2);
+number2=5;
+console.log("Teine väärtus: " + number2);
+        var number3 = 3;
+        function mingifunktsioon(){
+    document.getElementById("demo").innerHTML='Teine text';
+}
+    </script>
+</body>
+</html>
