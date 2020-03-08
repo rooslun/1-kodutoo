@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="clock.js"></script>
-    <script asycn ></script>
-    <link rel="stylesheet" href="style.css">
+    <script asycn></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Kell</title>
-</head>
-<body>
-    <div id="container">
+  </head>
+  <body>
+    <div id="container" class="container">
+      <div id="timeContainer" class="timeContainer">
         <div id="time">Kellaeg</div>
-        <div id="weekday">Nädalapäev</div>
-        <div id="score">Skoor</div>
-        <div id="date">Kuupäev</div>
-        <div id="month">Kuu</div>
+        <div id="monthName">Kuupäev</div>
         <div id="year">Aasta</div>
+      </div>
+
+      <div id="buttonContainer" class="buttonContainer">
+        <button id="change-color">Vaheta värvi</button>
+        <button id="change-font">Muuda teksti suurust</button>
+        <button id="change-size">Muuda fonti</button>
+      </div>
+
+      <div class="music">
+        <h1>Muusika</h1>
+        <audio
+          id="oksana"
+          src="everybody.mp3"
+          controls
+          preload="metadata"
+        ></audio>
+      </div>
+      <footer>
+        <p>
+          Roos-Marie Lunden.
+          <a href="http://github.com/rooslun/1-kodutoo" target="_blank"
+            >Githubi repositoorium</a
+          >
+        </p>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

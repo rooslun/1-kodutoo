@@ -1,55 +1,58 @@
-body{
-    margin:0;
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+body {
+  margin: 0;
+  max-height: 80%;
 }
 
-div{
-    text-align: center;
-    font-size: 1.5em;
-    color:white;
+div {
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
 }
 
-#container div{
-    padding: 2%;
+#container div {
+  padding: 2%;
 }
 
-#container{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 100vh;
-    width: 100vw;
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  width: 100vw;
 }
 
-#score{
-    order: 4;
-    background-color: royalblue;
+#time {
+  margin-top: 150px;
+  background-color: aquamarine;
+  width: 100%;
+  font-size: 50px;
 }
 
-#time{
-    order: 6;
-    align-self: flex-end;
-    background-color: aquamarine;
+#year {
+  background-color: rgb(24, 77, 131, 0.2);
+}
+#buttonContainer {
+  font: 300 30px/1 'Raleway', sans-serif;
+}
+#change-color {
+  background-color: pink;
+  height: 50px;
+}
+#change-font {
+  margin-top: 100px;
+  background-color: pink;
+  height: 50px;
+}
+#change-size {
+  background-color: pink;
+
+  height: 50px;
 }
 
-#date{
-    order: 1;
-    align-self: stretch;
-    background-color: blueviolet;
-}
-
-#weekday{
-    order: 5;
-    align-self: flex-start;
-    background-color: firebrick;
-}
-
-#month{
-    order: 1;
-    background-color: lightseagreen;
-}
-
-#year{
-    order: 3;
-    background-color: slategrey;
+footer {
+  text-align: center;
+  font-size: larger;
 }
