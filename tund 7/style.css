@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#wordDiv {
+    text-align: center;
+    font-size: 5vw;
+}
+
+#info {
+    font-size: 5vw;
+    position: absolute;
+}
+
+#score {
+    font-size: 4vw;
+    margin-bottom: 75px;
+    color: darkred;
+}
+
+#results {
+    display: none;
+    position: absolute;
+    background-color: darkgray;
+    color: white;
+    font-size: 25px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+#show-results {
+    position: absolute;
+    background-color: darkgray;
+    right: 0;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    #wordDiv {
+        font-size: 4em;
+    }
+}
