@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script defer src="typer.js"></script>
+    <title>Typer</title>
+</head>
+<body>
+    <nav>
+        <label class="logo">Typer</label>
+        <ul class="menu">
+            <li data-menu-game class="menu-item active">Mäng</li>
+            <li data-menu-results class="menu-item">Tulemused</li>
+            <li data-menu-tutorial class="menu-item">Õpetus</li>
+            <li data-menu-settings class="menu-item">Seadistus</li>
+        </ul>
+        <div class="mobile-nav-container"></div>
+        <label class="mobile-nav">MENU</label>
+    </nav>
+    <div id="info">5/5</div>
+    <div id="results">1. Tauri 123</div>
+    <div id="show-results">TOP 15</div>
+    <div id="nameContainer">
+        <p class="text">Tere tulemast mängu. Alustamiseks sisesta oma nimi.</p>
+        <label>Nimi</label>
+        <input type="text" id="name" class="name">
+        <label>Vali tase</label>
+        <input type="number" id="level" max="22" value="10" class="name">
+        <input type="number" id="startingLength" max="9" value="3" class="name">
+        <input type="button" id="submitName" value="Alusta mängu" class="name">
+        
+    </div>
+    <div id="container">
+        <div id="score">Mis sinu skoor oli</div>
+        <div id="wordDiv">Algne sõna</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+#nameContainer{
+    position: absolute;
+    z-index: 3;
+    width:100%;
+    height:100%;
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.name{
+    height: 3em;
+    width: 20%;
+    border-radius: 20px;
+    margin: 10px;
+    padding:5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.text{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#submitName{
+    background-color: lightseagreen;
+}
+
+.error{
+    background-color: red;
+}
+
+#container{
+    width:100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#wordDiv{
+    text-align: center;
+    font-size: 5vw;
+}
+
+#info{
+    font-size: 5vw;
+    position: absolute;
+}
+
+#score{
+    font-size: 4vw;
+    margin-bottom: 75px;
+    color: darkred;
+}
+
+#results{
+    display:none;
+    position: absolute;
+    background-color: darkgray;
+    color: white;
+    font-size: 25px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding-top: 3.5em;
+}
+
+#show-results{
+    position: absolute;
+    background-color: darkgray;
+    right:0;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px){
+    .name{
+        height: 2em;
+        width: 50%;
+        border-radius: 20px;
+        margin: 10px;
+        padding:5px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .name{
+        height: 2em;
+        width: 80%;
+        border-radius: 20px;
+        margin: 10px;
+        padding:5px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+}

@@ -3,45 +3,7 @@ console.log('Fail õigesti ühendatud.');
 let changeColorButton;
 let changeFontButton, fontChanged;
 
-let d = new Date();
-let day = d.getDay();
-let date = d.getDate();
-let month = d.getMonth();
-let year = d.getFullYear();
-
-let days = [
-  'Pühapäev',
-  'Esmaspäev',
-  'Teisipäev',
-  'Kolmapäev',
-  'Neljapäev',
-  'Reede',
-  'Laupäev'
-];
-let months = [
-  'Jaanuar',
-  'Veebruar',
-  'Märts',
-  'Aprill',
-  'Mai',
-  'Juuni',
-  'Juuli',
-  'August',
-  'September',
-  'Oktoober',
-  'November',
-  'Detsember'
-];
-
-let timeContainer = document.querySelector('#timeContainer');
-let buttonContainer = document.querySelector('#buttonContainer');
-
-let yearContainer = document.querySelector('#year');
-let monthName = document.querySelector('#monthName');
-
-yearContainer.innerHTML = year;
-
-window.setInterval(upDateClock, 1000);
+@ -45,20 +43,7 @@ window.setInterval(upDateClock, 1000);
 
 window.onload = function() {
   upDateClock();
@@ -59,29 +21,11 @@ window.onload = function() {
 
   changeFontSize = document.querySelector('#change-font');
   changeFontSize.addEventListener('click', changeTextSize);
+@ -62,28 +23,10 @@ window.onload = function() {
   sizeChanged = 0;
 };
 
-function upDateClock() {
-  d = new Date();
-  let seconds = d.getSeconds();
-  let minutes = d.getMinutes();
-  let hours = d.getHours();
-
-  if (seconds < 10) {
-    seconds = '0' + seconds;
-  }
-  if (minutes < 10) {
-    minutes = '0' + minutes;
-  }
-  if (hours < 10) {
-    hours = '0' + hours;
-  }
-
-  time.innerHTML = hours + ':' + minutes + ':' + seconds;
-  this.monthName.innerHTML = date + '.' + ' ' + months[month] + ' ' + days[day];
-
-  //time.innerHTML = d.toLocaleTimeString('et-EE');
+@ -85,70 +70,5 @@ function upDateClock() {
   //console.log(d);
 }
 
@@ -152,3 +96,4 @@ function changeTextSize() {
     sizeChanged = 0;
   }
 }
+/* let positions = ['flex-start', 'flex-end', 'center'];
