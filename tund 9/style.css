@@ -6,8 +6,8 @@ body{
 #nameContainer{
     position: absolute;
     z-index: 3;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     background-color: darkgray;
     display: flex;
     justify-content: center;
@@ -17,21 +17,21 @@ body{
 
 .name{
     height: 3em;
-    width: 20%;
+    width: 30%;
     border-radius: 20px;
     margin: 10px;
-    padding:5px;
+    padding: 10px;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .text{
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500; 
 }
 
 #submitName{
-    background-color: lightseagreen;
+    background-color: lightcyan;
 }
 
 .error{
@@ -72,7 +72,6 @@ body{
     width: 100vw;
     height: 100vh;
     text-align: center;
-    padding-top: 3.5em;
 }
 
 #show-results{
@@ -83,27 +82,8 @@ body{
     cursor: pointer;
 }
 
-@media screen and (max-width: 1200px){
-    .name{
-        height: 2em;
-        width: 50%;
-        border-radius: 20px;
-        margin: 10px;
-        padding:5px;
-        font-size: 20px;
-        font-weight: 700;
+@media screen and (max-width: 900px) {
+    #wordDiv{
+        font-size: 4em;
     }
-}
-
-@media screen and (max-width: 680px){
-    .name{
-        height: 2em;
-        width: 80%;
-        border-radius: 20px;
-        margin: 10px;
-        padding:5px;
-        font-size: 20px;
-        font-weight: 700;
-    }
-    
 }

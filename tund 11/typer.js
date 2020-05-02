@@ -1,3 +1,20 @@
+let typer;
+$('.menu-item').click(function(){
+    $('.menu-item').removeClass('active');
+    //console.log($(this));
+    $(this).addClass('active');
+    $('.menu').toggleClass('menu-active');
+    typer.selectContent();
+});
+
+$('.mobile-nav').click(function(){
+    $(this).toggleClass('active');
+    $('.menu').toggleClass('menu-active');
+});
+
+
+
+
 function restartGame(){
     $('#submitName').click(startGame);
     $(document).keypress((e)=>startGamewithEnter(e.keyCode));
@@ -27,7 +44,7 @@ function startGame(){
     let level = parseFloat($('#level').val());
     let startingLength = parseFloat($('#startingLength').val());
     $('#nameContainer').hide();
-    let typer = new Typer(name, level, startingLength); //Käivitab rakenduse. 
+    typer = new Typer(name, level, startingLength); //Käivitab rakenduse. 
 }
 
 
@@ -42,22 +59,64 @@ class Typer{
         this.word = "sõna"; //sõna, mis on vaja trükkida
         this.startTime = 0; //mängu alguseaeg
         this.endTime = 0; //mängu lõpuaeg
-        this.results = JSON.parse(localStorage.getItem("score")) || []; //tulemused localStorage'ist või tühi massiiv. 
+        this.results = [];
+        this.loadFromFile();
+         //tulemused localStorage'ist või tühi massiiv. 
 
-        this.init();
+        
+    }
+
+    selectContent(){
+        if($('[data-menu-game]').hasClass('active')){
+            $('#tutorial').hide();
+            $('#results').hide();
+            $('#nameContainer').hide();
+        } else if($('[data-menu-results]').hasClass('active')){
+            this.showResults();
+            $('#tutorial').hide();
+        }else if($('[data-menu-tutorial]').hasClass('active')){
+            this.showTutorial();
+            $('#results').hide();
+        }else if($('[data-menu-settings]').hasClass('active')){
+            console.log('data-menu-settings');
+            $('#tutorial').hide();
+            $('#results').hide();
+            $('#nameContainer').show();
+        }
+    }
+
+    showTutorial(){
+        $('#tutorial').fadeToggle();
+    }
+
+    loadFromFile(){
+        $.get('database.txt', function(data){
+                let content = JSON.parse(data).content;
+                console.log(content);
+                localStorage.setItem("score", JSON.stringify(content));
+            }).done(
+                this.init()
+        );
     }
 
     init(){
         $.get("lemmad2013.txt", (data)=>this.getWords(data)); //Laeme failist sõnad sisse ja saadame getWords meetodisse ning annan kaasa failist saadud andmed (data).
         $('#show-results').on('click', ()=>this.showResults()); //paneme divile id-ga "show-results" külge klikkimise kuulamise. Kui sinna peale klikitakse, siis paneme käima meetodis showResults.
+        this.results = JSON.parse(localStorage.getItem("score"));
     }
 
     showResults(){
         $('#results').fadeToggle(); //show-results klikkimise peale kuvame või peidame div'i id-ga "results"
         $('#results').html(""); //teeme div'i id-ga "results" tühjaks. 
+        if($('#show-results').html() == "TOP 15"){
+            $('#show-results').html("X");
+        } else {
+            $('#show-results').html("TOP 15");
+        }
+        
 
         //Käin for-tsükliga läbi 15 esimest tulemust ja panene (appendin) need div'i "results" sisse.
-        for(let i = 0; i<15; i++){
+        for(let i = 0; i<this.results.length; i++){
             $('#results').append((i+1)+ ". " + this.results[i].name +" "+ this.results[i].time + "<br>");
         }
     }
@@ -131,19 +190,20 @@ class Typer{
             name: this.name,
             time: ((this.endTime - this.startTime)/1000)
         }
-
+        console.log("siin ei tohiks olla tühi: " + this.results);
         this.results.push(result); //panen tulemuse massiivi
+        console.log( " 1 tulemus juures " + this.results);
         this.results.sort((a, b) => parseFloat(a.time) - parseFloat(b.time)); //sorteerin massiivi aja järgi - kõige kiirem aeg enne. 
         localStorage.setItem("score", JSON.stringify(this.results)); //salvestan tulemused localStorage'isse. 
 
-            $.post('server.php', {save: this.results}).done(function(){
-                console.log('Success');
-            }).fail(function(){
-                alert('FAIL');
-            }).always(function(){
-                console.log('Tegime midagi AJAXiga');
-            });
-        }
+        $.post('server.php', {save: this.results}).done(function(){
+            console.log('Success');
+        }).fail(function(){
+            alert('FAIL');
+        }).always(function(){
+            console.log('Tegime midagi AJAXiga');
+        });
+    }
 
     startNewGame(keypressed){
         //Kui vajutati nuppu "Enter", siis alustan uut mängu

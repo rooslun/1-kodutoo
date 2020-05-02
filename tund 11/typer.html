@@ -12,16 +12,27 @@
     <title>Typer</title>
 </head>
 <body>
+    <nav>
+        <label class="logo">Typer</label>
+        <ul class="menu">
+            <li data-menu-game class="menu-item active">Mäng</li>
+            <li data-menu-results class="menu-item">Tulemused</li>
+            <li data-menu-tutorial class="menu-item">Õpetus</li>
+            <li data-menu-settings class="menu-item">Seadistus</li>
+        </ul>
+        <div class="mobile-nav-container"></div>
+        <label class="mobile-nav">MENU</label>
+    </nav>
     <div id="info">5/5</div>
     <div id="results">1. Tauri 123</div>
     <div id="show-results">TOP 15</div>
-    <div id="nameContainer">
-        <p class="text">Tere tulemast mängu! Mängu alustamiseks sisesta oma nimi:</p>
-        <label>Nimi:</label>
+    <div id="askName">
+
+        <p class="text">Tere tulemast mängu. Alustamiseks sisesta oma nimi.</p>
+        <label>Nimi</label>
         <input type="text" id="name" class="name">
-        <label>Vali mängu tase (1-25):</label>
+        <label>Vali tase</label>
         <input type="number" id="level" max="22" value="10" class="name">
-        <label>Kui suure sõnaga soovid alustada</label>
         <input type="number" id="startingLength" max="9" value="3" class="name">
         <input type="button" id="submitName" value="Alusta mängu" class="name">
         
